@@ -1,0 +1,115 @@
+body {
+
+    margin: 0;
+
+    font-family: Arial;
+
+    background: linear-gradient(135deg, #ff9ec4, #ffc1e3, #ffd6f5);
+
+    height: 100vh;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    overflow: hidden;
+
+}
+
+.container {
+
+    background: white;
+
+    padding: 30px;
+
+    border-radius: 20px;
+
+    text-align: center;
+
+    width: 85%;
+
+    max-width: 500px;
+
+    box-shadow: 0 0 25px rgba(0, 0, 0, .2);
+
+    animation: muncul 1.5s;
+
+}
+
+.foto {
+
+    width: 220px;
+
+    height: 220px;
+
+    border-radius: 50%;
+
+    object-fit: cover;
+
+    border: 5px solid pink;
+
+}
+
+button {
+
+    padding: 15px 30px;
+
+    border: none;
+
+    background: #ff4d88;
+
+    color: white;
+
+    font-size: 18px;
+
+    border-radius: 30px;
+
+    cursor: pointer;
+
+    margin-top: 20px;
+
+    transition: .3s;
+
+}
+
+button:hover {
+
+    transform: scale(1.1);
+
+    background: #ff0066;
+
+}
+
+#pesan {
+
+    display: none;
+
+    margin-top: 20px;
+
+    line-height: 1.8;
+
+    animation: muncul 1s;
+
+}
+
+@keyframes muncul {
+
+    from {
+
+        opacity: 0;
+
+        transform: translateY(30px);
+
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform: translateY(0);
+
+    }
+
+}
