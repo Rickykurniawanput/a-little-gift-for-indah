@@ -6,65 +6,338 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Happy Birthday Sayang ❤️</title>
+    <title>A Little Gift For Indah ❤️</title>
 
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Dancing+Script:wght@700&display=swap"
+        rel="stylesheet">
+
+    <!-- CSS -->
     <link rel="stylesheet" href="style.css">
 
 </head>
 
 <body>
 
-    <div class="container">
+    <!-- ================= LOADING ================= -->
 
-        <h1>🎂 Happy Birthday Sayang ❤️</h1>
+    <div id="loading">
 
-        <img src="foto.jpg" class="foto">
+        <div class="loader">
 
-        <h2>Selamat Ulang Tahun yang ke-21</h2>
+            <h1>A Little Gift ❤️</h1>
 
-        <p id="countdown"></p>
+            <p>Loading Memories...</p>
 
-        <button onclick="bukaPesan()">💌 Buka Pesanku</button>
+            <div class="progress">
 
-        <div id="pesan">
+                <div class="progress-bar"></div>
 
-            <h2>Untuk Kamu ❤️</h2>
-
-            <p>
-
-                Happy Birthday Sayangku...
-
-                Hari ini kamu genap berusia <b>21 Tahun</b>.
-
-                Terima kasih sudah hadir di hidupku.
-
-                Semoga semua impianmu tercapai, selalu sehat, selalu bahagia,
-                dan semoga aku masih menjadi orang yang menemani setiap langkahmu.
-
-                Aku mungkin bukan orang yang paling sempurna,
-                tapi aku akan selalu berusaha menjadi yang terbaik untukmu.
-
-                Aku sayang kamu lebih dari kata-kata yang bisa dijelaskan.
-
-                Semoga di umurmu yang baru ini,
-                rezeki semakin lancar,
-                kuliah semakin mudah,
-                keluarga selalu sehat,
-                dan semua doa baikmu dikabulkan.
-
-                ❤️ Happy Birthday My Love ❤️
-
-            </p>
+            </div>
 
         </div>
 
     </div>
 
-    <audio autoplay loop>
+    <!-- ================= BACKGROUND ================= -->
 
-        <source src="lagu.mp3">
+    <div class="stars"></div>
+
+    <div class="shooting-star"></div>
+
+    <div class="hearts"></div>
+
+    <!-- ================= HERO ================= -->
+
+    <section class="hero">
+
+        <div class="glass">
+
+            <p class="top-title">
+
+                Just For Someone Special
+
+            </p>
+
+            <h1>
+
+                A Little Gift
+
+                <br>
+
+                <span>For Indah ❤️</span>
+
+            </h1>
+
+            <p class="subtitle">
+
+                "Some stories begin with a simple Hello."
+
+                <br><br>
+
+                "Ours started on Telegram 📱"
+
+            </p>
+
+            <button id="openBtn">
+
+                💌 Open My Letter
+
+            </button>
+
+        </div>
+
+    </section>
+
+    <!-- ================= COUNTDOWN ================= -->
+
+    <section class="countdown">
+
+        <h2>
+
+            Countdown To
+
+            <br>
+
+            Indah's Birthday 🎂
+
+        </h2>
+
+        <div class="countdown-box">
+
+            <div>
+
+                <span id="days">00</span>
+
+                <p>Days</p>
+
+            </div>
+
+            <div>
+
+                <span id="hours">00</span>
+
+                <p>Hours</p>
+
+            </div>
+
+            <div>
+
+                <span id="minutes">00</span>
+
+                <p>Minutes</p>
+
+            </div>
+
+            <div>
+
+                <span id="seconds">00</span>
+
+                <p>Seconds</p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- ================= LETTER ================= -->
+
+    <section id="letterSection">
+
+        <div class="letter-card">
+
+            <h2>
+
+                Happy Birthday
+
+                <br>
+
+                Indah ❤️
+
+            </h2>
+
+            <p id="typing"></p>
+
+        </div>
+
+    </section>
+
+    <!-- ================= MUSIC ================= -->
+
+    <section class="music">
+
+        <h2>
+
+            🎵 Lagu Untuk Kamu
+
+        </h2>
+
+        <p>
+
+            Lagu ini mungkin nggak bisa mewakili semuanya,
+
+            tapi semoga bisa menemani kamu membaca surat ini.
+
+            ❤️
+
+        </p>
+
+        <iframe style="border-radius:15px" src="https://open.spotify.com/embed/track/ID_LAGU" width="100%" height="152"
+            frameborder="0" allowfullscreen
+            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture">
+
+        </iframe>
+
+    </section>
+
+    <!-- ================= STORY ================= -->
+
+    <section class="story">
+
+        <h2>
+
+            How Everything Started ❤️
+
+        </h2>
+
+        <div class="timeline">
+
+            <div class="timeline-item">
+
+                <div class="circle"></div>
+
+                <div class="content">
+
+                    <h3>
+
+                        📱 Telegram
+
+                    </h3>
+
+                    <p>
+
+                        Semuanya berawal dari sebuah chat sederhana.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+            <div class="timeline-item">
+
+                <div class="circle"></div>
+
+                <div class="content">
+
+                    <h3>
+
+                        😊 Two Months
+
+                    </h3>
+
+                    <p>
+
+                        Mungkin kita baru kenal sebentar.
+
+                        Tapi aku senang bisa mengenal kamu.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+            <div class="timeline-item">
+
+                <div class="circle"></div>
+
+                <div class="content">
+
+                    <h3>
+
+                        🎂 10 July
+
+                    </h3>
+
+                    <p>
+
+                        Website kecil ini kubuat khusus
+
+                        untuk ulang tahunmu yang ke-21.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- ================= ENDING ================= -->
+
+    <section class="ending">
+
+        <h1>
+
+            Thank You ❤️
+
+        </h1>
+
+        <p>
+
+            Terima kasih sudah hadir di hari-hariku.
+
+            Semoga di umurmu yang ke-21,
+
+            semua impianmu satu per satu tercapai.
+
+            Tetap sehat.
+
+            Tetap bahagia.
+
+            Dan tetap menjadi Indah yang aku kenal.
+
+        </p>
+
+        <h2>
+
+            — Ricky ❤️
+
+        </h2>
+
+    </section>
+
+    <footer>
+
+        Made with ❤️ by Ricky
+
+        <br>
+
+        Version 2.0
+
+    </footer>
+
+    <!-- Confetti -->
+
+    <canvas id="confetti"></canvas>
+
+    <!-- Audio -->
+
+    <audio id="clickSound">
+
+        <source src="click.mp3" type="audio/mpeg">
 
     </audio>
+
+    <!-- Javascript -->
 
     <script src="script.js"></script>
 
