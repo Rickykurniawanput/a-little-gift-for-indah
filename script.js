@@ -1,118 +1,134 @@
-// =========================================
+// ======================================
 // A Little Gift For Indah ❤️
-// By Ricky
-// =========================================
+// Made with ❤️ by Ricky
+// ======================================
 
-// Loading Screen
-window.addEventListener("load", () => {
+// ==============================
+// Ambil Element
+// ==============================
 
-    setTimeout(() => {
+const opening = document.getElementById("opening");
+const hero = document.getElementById("hero");
+const startBtn = document.getElementById("startBtn");
+const openBtn = document.getElementById("openBtn");
+const letter = document.querySelector(".letter");
+const typing = document.getElementById("typing");
+const music = document.getElementById("bgMusic");
 
-        const loading = document.getElementById("loading");
+// Hero disembunyikan saat pertama kali
+hero.style.display = "none";
 
-        loading.style.opacity = "0";
 
-        setTimeout(() => {
+// ==============================
+// Opening Screen
+// ==============================
 
-            loading.style.display = "none";
+startBtn.addEventListener("click", () => {
 
-        }, 1000);
+    opening.style.display = "none";
 
-    }, 2800);
+    hero.style.display = "flex";
+
+    hero.scrollIntoView({
+        behavior: "smooth"
+    });
+
+    music.volume = 0.5;
+
+    music.play().catch(() => {});
 
 });
 
-// ===============================
+
+// ==============================
 // Countdown
-// ===============================
+// ==============================
 
-const birthday = new Date("July 10, 2026 00:00:00").getTime();
+const targetDate = new Date("July 10, 2026 00:00:00").getTime();
 
-const countdown = setInterval(() => {
+setInterval(() => {
 
     const now = new Date().getTime();
 
-    const distance = birthday - now;
+    const distance = targetDate - now;
 
-    if(distance < 0){
+    if (distance <= 0) {
 
-        clearInterval(countdown);
-
-        document.querySelector(".countdown-box").innerHTML=`
-
-            <h2 style="width:100%;
-            color:#ff8fd2;">
-            🎉 Happy Birthday Indah ❤️
-            </h2>
-
-        `;
+        document.getElementById("days").innerHTML = "00";
+        document.getElementById("hours").innerHTML = "00";
+        document.getElementById("minutes").innerHTML = "00";
+        document.getElementById("seconds").innerHTML = "00";
 
         return;
 
     }
 
-    const days = Math.floor(distance / (1000*60*60*24));
+    document.getElementById("days").innerHTML =
+        Math.floor(distance / (1000 * 60 * 60 * 24));
 
-    const hours = Math.floor((distance%(1000*60*60*24))/(1000*60*60));
+    document.getElementById("hours").innerHTML =
+        Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
 
-    const minutes = Math.floor((distance%(1000*60*60))/(1000*60));
+    document.getElementById("minutes").innerHTML =
+        Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
 
-    const seconds = Math.floor((distance%(1000*60))/1000);
+    document.getElementById("seconds").innerHTML =
+        Math.floor((distance % (1000 * 60)) / 1000);
 
-    document.getElementById("days").innerHTML=days;
-    document.getElementById("hours").innerHTML=hours;
-    document.getElementById("minutes").innerHTML=minutes;
-    document.getElementById("seconds").innerHTML=seconds;
+}, 1000);
 
-},1000);
 
-// ===============================
-// Surat
-// ===============================
+// ==============================
+// Isi Surat
+// ==============================
 
-const text = `
+const message = `
 
 Hai Indah ❤️
 
-Selamat ulang tahun yaa.
+Selamat ulang tahun yang ke-21 yaa...
 
-Hari ini umur kamu genap 21 tahun.
+Semoga di umur yang baru ini,
+semua doa dan impian kamu
+pelan-pelan bisa terwujud.
 
-Jujur aja...
+Jujur...
 
-Aku sempat bingung mau kasih hadiah apa.
+Aku sempat bingung
+mau kasih hadiah apa buat kamu😅.
 
-Karena menurutku...
+Akhirnya aku memilih
+membuat website kecil ini.
 
-Hadiah paling indah bukan selalu sesuatu yang mahal.
+Mungkin hasilnya sederhana.
 
-Akhirnya aku memutuskan membuat website kecil ini.
+Tapi...
 
-Mungkin sederhana.
+Setiap baris kodenya
+aku tulis sendiri
+khusus buat kamu.
 
-Tapi setiap baris kodenya aku tulis khusus buat kamu.
+Walaupun kita baru saling kenal
+sekitar dua bulan.
+
+Aku bersyukur
+bisa mengenal seseorang
+sebaik kamu.
 
 Terima kasih ya...
 
-Walaupun kita baru kenal sekitar dua bulan.
+Udah mau hadir
+di hari-hariku.
 
-Dan semuanya berawal dari Telegram.
+Semoga kuliahnya lancar.
 
-Aku senang bisa mengenal seseorang seperti kamu.
+Semoga selalu sehat.
 
-Semoga di umurmu yang ke-21 ini,
+Semoga selalu bahagia.
 
-✨ Kuliahnya lancar.
-
-✨ Semua impianmu tercapai.
-
-✨ Selalu sehat.
-
-✨ Selalu bahagia.
-
-Terima kasih sudah hadir di hari-hariku.
-
-Semoga website kecil ini bisa bikin kamu tersenyum.
+Dan semoga
+senyummu
+nggak pernah hilang.
 
 Happy Birthday ❤️
 
@@ -120,51 +136,41 @@ Happy Birthday ❤️
 
 `;
 
-const typing=document.getElementById("typing");
+let index = 0;
+// ==============================
+// Typing Effect
+// ==============================
 
-let i=0;
+function typeWriter() {
 
-function typeWriter(){
+    if (index < message.length) {
 
-    if(i<text.length){
+        typing.innerHTML += message.charAt(index);
 
-        typing.innerHTML += text.charAt(i);
+        index++;
 
-        i++;
-
-        setTimeout(typeWriter,35);
+        setTimeout(typeWriter, 35);
 
     }
 
 }
 
-// ===============================
-// Button
-// ===============================
 
-const btn=document.getElementById("openBtn");
+// ==============================
+// Tombol Buka Surat
+// ==============================
 
-const letter=document.getElementById("letterSection");
+openBtn.addEventListener("click", () => {
 
-btn.addEventListener("click",()=>{
-
-    const audio=document.getElementById("clickSound");
-
-    if(audio){
-
-        audio.play().catch(()=>{});
-
-    }
-
-    letter.style.display="block";
+    letter.style.display = "block";
 
     letter.scrollIntoView({
 
-        behavior:"smooth"
+        behavior: "smooth"
 
     });
 
-    if(i===0){
+    if (index === 0) {
 
         typeWriter();
 
@@ -174,39 +180,45 @@ btn.addEventListener("click",()=>{
 
 });
 
-// ===============================
-// Floating Hearts
-// ===============================
 
-function createHearts(){
+// ==============================
+// Love Animation
+// ==============================
 
-    for(let x=0;x<40;x++){
+function createHearts() {
 
-        let heart=document.createElement("div");
+    const icons = ["❤️","💕","💖","💗","💝"];
 
-        heart.innerHTML=["❤️","💖","💕","💗","💜"][Math.floor(Math.random()*5)];
+    for(let i = 0; i < 40; i++){
 
-        heart.style.position="fixed";
+        const heart = document.createElement("div");
 
-        heart.style.left=Math.random()*100+"vw";
+        heart.innerHTML = icons[Math.floor(Math.random()*icons.length)];
 
-        heart.style.top="-20px";
+        heart.style.position = "fixed";
 
-        heart.style.fontSize=(18+Math.random()*20)+"px";
+        heart.style.left = Math.random()*100 + "vw";
 
-        heart.style.opacity=Math.random();
+        heart.style.top = "-40px";
 
-        heart.style.transition=(4+Math.random()*3)+"s linear";
+        heart.style.fontSize = (18 + Math.random()*20) + "px";
 
-        heart.style.pointerEvents="none";
+        heart.style.pointerEvents = "none";
+
+        heart.style.zIndex = "9999";
+
+        heart.style.transition = "6s linear";
 
         document.body.appendChild(heart);
 
         setTimeout(()=>{
 
-            heart.style.top="110vh";
+            heart.style.top = "110vh";
 
-            heart.style.transform="rotate(360deg)";
+            heart.style.transform =
+                `translateX(${Math.random()*200-100}px) rotate(360deg)`;
+
+            heart.style.opacity = "0";
 
         },50);
 
@@ -214,69 +226,37 @@ function createHearts(){
 
             heart.remove();
 
-        },7000);
+        },6500);
 
     }
 
 }
 
-// ===============================
+
+// ==============================
 // Cursor Glow
-// ===============================
+// ==============================
 
-const cursor=document.createElement("div");
+const cursor = document.createElement("div");
 
-cursor.className="cursor";
+cursor.classList.add("cursor");
 
 document.body.appendChild(cursor);
 
 document.addEventListener("mousemove",(e)=>{
 
-    cursor.style.left=e.clientX-10+"px";
+    cursor.style.left = (e.clientX-10)+"px";
 
-    cursor.style.top=e.clientY-10+"px";
-
-});
-
-// ===============================
-// Console Message
-// ===============================
-
-console.clear();
-
-console.log("%c❤️ A Little Gift For Indah ❤️","font-size:24px;color:pink;font-weight:bold;");
-
-console.log("Hai Indah 👋");
-
-console.log("Kalau kamu lagi buka Inspect...");
-
-console.log("Aku cuma mau bilang...");
-
-console.log("Selamat Ulang Tahun ❤️");
-
-console.log("Semoga selalu bahagia.");
-
-console.log("- Ricky");
-
-// ===============================
-// Keyboard Easter Egg
-// ===============================
-
-document.addEventListener("keydown",(e)=>{
-
-    if(e.key.toLowerCase()=="i"){
-
-        alert("❤️ I Love You ❤️");
-
-    }
+    cursor.style.top = (e.clientY-10)+"px";
 
 });
 
-// ===============================
-// Smooth Reveal Animation
-// ===============================
 
-const observer=new IntersectionObserver(entries=>{
+// ==============================
+// Scroll Animation
+// ==============================
+
+const observer = new IntersectionObserver((entries)=>{
 
     entries.forEach(entry=>{
 
@@ -292,14 +272,36 @@ const observer=new IntersectionObserver(entries=>{
 
 });
 
-document.querySelectorAll("section").forEach(sec=>{
+document.querySelectorAll("section").forEach(section=>{
 
-    sec.style.opacity="0";
+    if(section.id !== "opening"){
 
-    sec.style.transform="translateY(80px)";
+        section.style.opacity="0";
 
-    sec.style.transition="1s";
+        section.style.transform="translateY(60px)";
 
-    observer.observe(sec);
+        section.style.transition="1s";
+
+        observer.observe(section);
+
+    }
 
 });
+
+
+// ==============================
+// Console
+// ==============================
+
+console.clear();
+
+console.log(
+"%cHappy Birthday Indah ❤️",
+"font-size:28px;color:#ff69b4;font-weight:bold;"
+);
+
+console.log("Website ini dibuat khusus oleh Ricky.");
+
+console.log("Semoga kamu selalu bahagia.");
+
+console.log("❤️");
