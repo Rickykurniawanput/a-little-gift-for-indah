@@ -1,7 +1,7 @@
-/* ===================================
+/* ==========================================
    A Little Gift For Indah ❤️
-   By Ricky
-=================================== */
+   Made with ❤️ by Ricky
+========================================== */
 
 * {
     margin: 0;
@@ -17,7 +17,7 @@ body {
 
     font-family: 'Poppins', sans-serif;
 
-    background: linear-gradient(180deg, #070B1A, #101730, #1D2147, #38205C);
+    background: linear-gradient(180deg, #0b1020, #1b1b38, #32204f, #4b235f);
 
     color: #fff;
 
@@ -25,213 +25,47 @@ body {
 
 }
 
-/* ===========================
-LOADING
-=========================== */
-
-#loading {
-
-    position: fixed;
-
-    inset: 0;
-
-    background: #050816;
-
-    display: flex;
-
-    justify-content: center;
-
-    align-items: center;
-
-    z-index: 999999;
-
-    transition: 1s;
-
-}
-
-.loader {
-
-    text-align: center;
-
-}
-
-.loader h1 {
-
-    font-family: 'Dancing Script', cursive;
-
-    font-size: 60px;
-
-    margin-bottom: 15px;
-
-    color: #ff9dd8;
-
-}
-
-.loader p {
-
-    margin-bottom: 20px;
-
-    opacity: .8;
-
-}
-
-.progress {
-
-    width: 300px;
-
-    height: 10px;
-
-    background: #2c2c44;
-
-    border-radius: 50px;
-
-    overflow: hidden;
-
-}
-
-.progress-bar {
-
-    width: 0;
-
-    height: 100%;
-
-    background: linear-gradient(90deg, #ff4fa6, #ffb6e7);
-
-    animation: loading 3s forwards;
-
-}
-
-@keyframes loading {
-
-    100% {
-
-        width: 100%;
-
-    }
-
-}
-
-/* ===========================
+/* =========================
 BACKGROUND
-=========================== */
+========================= */
 
-.stars {
+.background-hearts {
 
     position: fixed;
 
     inset: 0;
 
-    z-index: -3;
-
-    background-image:
-
-        radial-gradient(white 1px, transparent 1px),
-
-        radial-gradient(#ffd9f5 1px, transparent 1px);
-
-    background-size: 80px 80px, 140px 140px;
-
-    animation: starMove 80s linear infinite;
-
-}
-
-@keyframes starMove {
-
-    from {
-
-        transform: translateY(0);
-
-    }
-
-    to {
-
-        transform: translateY(-400px);
-
-    }
-
-}
-
-.shooting-star {
-
-    position: fixed;
-
-    width: 180px;
-
-    height: 2px;
-
-    background: linear-gradient(to right, #fff, transparent);
-
-    top: 15%;
-
-    left: -200px;
-
-    transform: rotate(-25deg);
-
-    animation: shoot 9s linear infinite;
-
-    opacity: .8;
-
-}
-
-@keyframes shoot {
-
-    0% {
-
-        left: -300px;
-
-        top: 10%;
-
-    }
-
-    100% {
-
-        left: 120%;
-
-        top: 45%;
-
-    }
-
-}
-
-.hearts {
-
-    position: fixed;
-
-    width: 100%;
-
-    height: 100%;
-
     overflow: hidden;
 
-    pointer-events: none;
-
-    z-index: -2;
+    z-index: -10;
 
 }
 
-.hearts::before {
+.background-hearts::before {
 
-    content: "❤️ 💖 💕 💗 💜 ❤️";
+    content: "❤️ 💖 💕 🤍 ❤️ 💗 💖 💕 ❤️ 💞 💝";
 
     position: absolute;
 
+    width: 100%;
+
     font-size: 22px;
 
-    opacity: .18;
+    opacity: .08;
 
-    animation: heartFall 18s linear infinite;
+    animation: fall 18s linear infinite;
 
 }
 
-@keyframes heartFall {
+@keyframes fall {
 
-    0% {
+    from {
 
         transform: translateY(-120%);
 
     }
 
-    100% {
+    to {
 
         transform: translateY(120vh);
 
@@ -239,11 +73,13 @@ BACKGROUND
 
 }
 
-/* ===========================
-HERO
-=========================== */
+/* =========================
+OPENING
+========================= */
 
-.hero {
+.opening {
+
+    width: 100%;
 
     height: 100vh;
 
@@ -253,47 +89,153 @@ HERO
 
     align-items: center;
 
-    padding: 20px;
-
-    text-align: center;
+    padding: 25px;
 
 }
 
-.glass {
+.opening-box {
 
-    max-width: 760px;
+    max-width: 700px;
 
     width: 100%;
 
-    padding: 50px;
+    padding: 55px;
 
-    border-radius: 30px;
+    text-align: center;
 
     background: rgba(255, 255, 255, .08);
 
     backdrop-filter: blur(18px);
 
+    border-radius: 30px;
+
     border: 1px solid rgba(255, 255, 255, .12);
 
-    box-shadow:
-
-        0 0 50px rgba(255, 105, 180, .15),
-
-        0 0 120px rgba(255, 105, 180, .05);
+    box-shadow: 0 0 35px rgba(255, 105, 180, .25);
 
 }
 
-.top-title {
+.opening-box h3 {
 
-    letter-spacing: 5px;
+    color: #ffd7ea;
 
-    text-transform: uppercase;
-
-    font-size: 14px;
-
-    color: #ffc4ec;
+    letter-spacing: 2px;
 
     margin-bottom: 15px;
+
+}
+
+.opening-box h1 {
+
+    font-family: 'Dancing Script', cursive;
+
+    font-size: 70px;
+
+    color: #ffb6dd;
+
+    margin-bottom: 25px;
+
+}
+
+.opening-box p {
+
+    line-height: 2;
+
+    opacity: .95;
+
+    margin-bottom: 35px;
+
+}
+
+/* =========================
+BUTTON
+========================= */
+
+button {
+
+    border: none;
+
+    padding: 16px 45px;
+
+    border-radius: 40px;
+
+    cursor: pointer;
+
+    font-size: 17px;
+
+    font-weight: bold;
+
+    color: white;
+
+    background: linear-gradient(45deg, #ff4da6, #ff8fd3);
+
+    transition: .35s;
+
+}
+
+button:hover {
+
+    transform: translateY(-4px);
+
+    box-shadow: 0 15px 30px rgba(255, 105, 180, .45);
+
+}
+
+/* =========================
+HERO
+========================= */
+
+#hero {
+
+    display: none;
+
+}
+
+.hero {
+
+    min-height: 100vh;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    padding: 60px 20px;
+
+}
+
+.hero-content {
+
+    width: 100%;
+
+    max-width: 900px;
+
+    text-align: center;
+
+    background: rgba(255, 255, 255, .08);
+
+    backdrop-filter: blur(15px);
+
+    border-radius: 30px;
+
+    padding: 60px;
+
+    border: 1px solid rgba(255, 255, 255, .12);
+
+}
+
+.date {
+
+    display: inline-block;
+
+    padding: 8px 22px;
+
+    background: #ff5ca9;
+
+    border-radius: 30px;
+
+    margin-bottom: 25px;
 
 }
 
@@ -305,177 +247,185 @@ HERO
 
     margin-bottom: 20px;
 
-    line-height: 1.2;
-
 }
 
-.hero span {
+.hero h1 span {
 
-    color: #ff9ed7;
+    color: #ffc9e8;
 
 }
 
 .subtitle {
 
-    font-size: 21px;
+    font-size: 20px;
 
-    line-height: 1.8;
+    line-height: 1.9;
 
-    opacity: .9;
-
-    margin-bottom: 40px;
+    margin-bottom: 45px;
 
 }
 
-button {
-
-    padding: 16px 45px;
-
-    border: none;
-
-    border-radius: 50px;
-
-    background: linear-gradient(45deg, #ff4fa6, #ff8bd4);
-
-    color: #fff;
-
-    font-size: 18px;
-
-    font-weight: bold;
-
-    cursor: pointer;
-
-    transition: .35s;
-
-}
-
-button:hover {
-
-    transform: translateY(-5px);
-
-    box-shadow: 0 15px 40px rgba(255, 105, 180, .4);
-
-}
-
-/* Glow */
-
-button::after {
-
-    content: "";
-
-    position: absolute;
-
-}
-
-/* ===========================
+/* =========================
 COUNTDOWN
-=========================== */
+========================= */
 
 .countdown {
-
-    padding: 100px 20px;
-
-    text-align: center;
-
-}
-
-.countdown h2 {
-
-    font-family: 'Dancing Script', cursive;
-
-    font-size: 55px;
-
-    margin-bottom: 50px;
-
-    color: #ffb6df;
-
-}
-
-.countdown-box {
 
     display: flex;
 
     justify-content: center;
 
-    gap: 25px;
-
     flex-wrap: wrap;
+
+    gap: 20px;
+
+    margin-bottom: 40px;
 
 }
 
-.countdown-box div {
+.countdown div {
 
-    width: 140px;
-
-    padding: 30px 20px;
+    width: 120px;
 
     background: rgba(255, 255, 255, .08);
 
-    backdrop-filter: blur(15px);
+    padding: 22px;
 
     border-radius: 20px;
 
-    border: 1px solid rgba(255, 255, 255, .15);
-
-    transition: .3s;
+    transition: .35s;
 
 }
 
-.countdown-box div:hover {
+.countdown div:hover {
 
     transform: translateY(-8px);
 
-    box-shadow: 0 15px 30px rgba(255, 105, 180, .25);
+}
+
+.countdown h2 {
+
+    color: #ff9bcf;
+
+    font-size: 40px;
 
 }
 
-.countdown-box span {
+.countdown p {
 
-    display: block;
-
-    font-size: 42px;
-
-    font-weight: bold;
-
-    color: #ff9ed7;
+    margin-top: 8px;
 
 }
 
-.countdown-box p {
+/* =========================
+PHOTO
+========================= */
 
-    margin-top: 10px;
+.photo-section {
 
-    font-size: 16px;
+    padding: 90px 20px;
+
+    text-align: center;
 
 }
 
-/* ===========================
+.photo-box {
+
+    display: flex;
+
+    justify-content: center;
+
+}
+
+.photo-box img {
+
+    width: 300px;
+
+    height: 300px;
+
+    border-radius: 50%;
+
+    object-fit: cover;
+
+    border: 6px solid #ff7abd;
+
+    box-shadow:
+
+        0 0 25px rgba(255, 122, 189, .8),
+
+        0 0 60px rgba(255, 122, 189, .4);
+
+    animation: floating 4s ease-in-out infinite;
+
+}
+
+.photo-text {
+
+    margin-top: 35px;
+
+    max-width: 700px;
+
+    margin-inline: auto;
+
+    font-family: 'Dancing Script', cursive;
+
+    font-size: 38px;
+
+    color: #ffd6ea;
+
+}
+
+@keyframes floating {
+
+    0% {
+
+        transform: translateY(0);
+
+    }
+
+    50% {
+
+        transform: translateY(-10px);
+
+    }
+
+    100% {
+
+        transform: translateY(0);
+
+    }
+
+}
+
+/* =========================
 LETTER
-=========================== */
+========================= */
 
-#letterSection {
+.letter {
 
     display: none;
 
-    padding: 100px 20px;
+    padding: 90px 20px;
 
 }
 
 .letter-card {
 
-    max-width: 850px;
+    max-width: 900px;
 
     margin: auto;
 
+    padding: 50px;
+
+    border-radius: 30px;
+
     background: rgba(255, 255, 255, .08);
 
-    backdrop-filter: blur(20px);
+    backdrop-filter: blur(15px);
 
-    border: 1px solid rgba(255, 255, 255, .15);
+    border: 1px solid rgba(255, 255, 255, .12);
 
-    border-radius: 25px;
-
-    padding: 50px;
+    box-shadow: 0 0 35px rgba(255, 105, 180, .18);
 
 }
 
@@ -485,11 +435,11 @@ LETTER
 
     font-family: 'Dancing Script', cursive;
 
-    font-size: 50px;
+    font-size: 48px;
 
-    margin-bottom: 35px;
+    color: #ffc4e5;
 
-    color: #ffb6df;
+    margin-bottom: 30px;
 
 }
 
@@ -497,217 +447,175 @@ LETTER
 
     white-space: pre-line;
 
-    font-size: 18px;
-
     line-height: 2;
 
-    min-height: 350px;
+    font-size: 18px;
+
+    color: #ffffff;
 
 }
 
-/* ===========================
+/* =========================
 SPOTIFY
-=========================== */
+========================= */
 
-.music {
+.spotify {
 
-    padding: 100px 20px;
+    padding: 90px 20px;
 
     text-align: center;
 
 }
 
-.music h2 {
+.spotify h2 {
 
-    font-size: 40px;
+    font-size: 38px;
 
     margin-bottom: 20px;
 
+    color: #ffd7eb;
+
 }
 
-.music p {
+.spotify-text {
 
     max-width: 650px;
 
-    margin: 0 auto 40px;
+    margin: 0 auto 30px;
 
-    line-height: 1.8;
+    line-height: 1.9;
 
-    opacity: .85;
+    opacity: .9;
 
 }
 
-.music iframe {
+.spotify iframe {
+
+    width: 100%;
 
     max-width: 700px;
 
     border: none;
 
-}
-
-/* ===========================
-TIMELINE
-=========================== */
-
-.story {
-
-    padding: 100px 20px;
-
-}
-
-.story h2 {
-
-    text-align: center;
-
-    font-size: 42px;
-
-    margin-bottom: 60px;
-
-    color: #ffb6df;
-
-}
-
-.timeline {
-
-    max-width: 850px;
-
-    margin: auto;
-
-    border-left: 3px solid rgba(255, 255, 255, .2);
-
-    padding-left: 30px;
-
-}
-
-.timeline-item {
-
-    position: relative;
-
-    margin-bottom: 50px;
-
-}
-
-.circle {
-
-    position: absolute;
-
-    left: -42px;
-
-    width: 18px;
-
-    height: 18px;
-
-    background: #ff5eb6;
-
-    border-radius: 50%;
-
-    box-shadow: 0 0 20px #ff5eb6;
-
-}
-
-.content {
-
-    background: rgba(255, 255, 255, .08);
-
-    padding: 25px;
-
     border-radius: 18px;
 
-}
-
-.content h3 {
-
-    margin-bottom: 12px;
+    box-shadow: 0 0 30px rgba(255, 105, 180, .35);
 
 }
 
-.content p {
-
-    line-height: 1.8;
-
-}
-
-/* ===========================
+/* =========================
 ENDING
-=========================== */
+========================= */
 
 .ending {
 
-    padding: 120px 20px;
-
-    text-align: center;
+    padding: 90px 20px;
 
 }
 
-.ending h1 {
+.ending-card {
 
-    font-family: 'Dancing Script', cursive;
-
-    font-size: 70px;
-
-    margin-bottom: 35px;
-
-    color: #ffb6df;
-
-}
-
-.ending p {
-
-    max-width: 750px;
+    max-width: 900px;
 
     margin: auto;
 
+    text-align: center;
+
+    padding: 50px;
+
+    border-radius: 30px;
+
+    background: rgba(255, 255, 255, .08);
+
+    backdrop-filter: blur(15px);
+
+    border: 1px solid rgba(255, 255, 255, .12);
+
+    box-shadow: 0 0 35px rgba(255, 105, 180, .18);
+
+}
+
+.ending-card h2 {
+
+    font-family: 'Dancing Script', cursive;
+
+    font-size: 50px;
+
+    color: #ffc4e5;
+
+    margin-bottom: 25px;
+
+}
+
+.ending-card p {
+
     line-height: 2;
 
-    font-size: 19px;
+    font-size: 18px;
 
 }
 
-.ending h2 {
-
-    margin-top: 45px;
-
-    color: #ff9ed7;
-
-}
-
-/* ===========================
+/* =========================
 FOOTER
-=========================== */
+========================= */
 
 footer {
 
+    margin-top: 70px;
+
+    padding: 40px 20px;
+
     text-align: center;
 
-    padding: 40px;
-
-    color: #bdbdbd;
-
-    line-height: 2;
-
-    border-top: 1px solid rgba(255, 255, 255, .08);
+    border-top: 1px solid rgba(255, 255, 255, .1);
 
 }
 
-/* ===========================
-CONFETTI
-=========================== */
+footer p {
 
-#confetti {
+    font-size: 24px;
+
+    color: #ffc7e8;
+
+    margin-bottom: 10px;
+
+}
+
+footer span {
+
+    opacity: .8;
+
+    font-size: 15px;
+
+}
+
+/* =========================
+CURSOR
+========================= */
+
+.cursor {
 
     position: fixed;
 
-    inset: 0;
+    width: 20px;
+
+    height: 20px;
+
+    border-radius: 50%;
+
+    background: #ff8fd0;
+
+    filter: blur(10px);
 
     pointer-events: none;
 
-    z-index: 999;
+    z-index: 9999;
 
 }
 
-/* ===========================
-SCROLL BAR
-=========================== */
+/* =========================
+SCROLLBAR
+========================= */
 
 ::-webkit-scrollbar {
 
@@ -715,29 +623,47 @@ SCROLL BAR
 
 }
 
-::-webkit-scrollbar-thumb {
-
-    background: #ff7dc7;
-
-    border-radius: 20px;
-
-}
-
 ::-webkit-scrollbar-track {
 
-    background: #111;
+    background: #101421;
 
 }
 
-/* ===========================
+::-webkit-scrollbar-thumb {
+
+    background: #ff7abf;
+
+    border-radius: 50px;
+
+}
+
+/* =========================
 RESPONSIVE
-=========================== */
+========================= */
 
 @media(max-width:768px) {
 
-    .hero h1 {
+    .opening-box {
+
+        padding: 35px 25px;
+
+    }
+
+    .opening-box h1 {
 
         font-size: 52px;
+
+    }
+
+    .hero-content {
+
+        padding: 35px 25px;
+
+    }
+
+    .hero h1 {
+
+        font-size: 54px;
 
     }
 
@@ -747,39 +673,37 @@ RESPONSIVE
 
     }
 
-    .glass {
+    .countdown {
 
-        padding: 35px 25px;
+        gap: 12px;
 
     }
 
-    button {
+    .countdown div {
 
-        width: 100%;
+        width: 90px;
+
+        padding: 18px;
 
     }
 
     .countdown h2 {
 
-        font-size: 42px;
+        font-size: 28px;
 
     }
 
-    .countdown-box {
+    .photo-box img {
 
-        gap: 15px;
+        width: 220px;
 
-    }
-
-    .countdown-box div {
-
-        width: 120px;
+        height: 220px;
 
     }
 
-    .countdown-box span {
+    .photo-text {
 
-        font-size: 34px;
+        font-size: 28px;
 
     }
 
@@ -791,7 +715,7 @@ RESPONSIVE
 
     .letter-card h2 {
 
-        font-size: 38px;
+        font-size: 36px;
 
     }
 
@@ -801,39 +725,33 @@ RESPONSIVE
 
     }
 
-    .story h2 {
+    .spotify h2 {
 
-        font-size: 34px;
-
-    }
-
-    .timeline {
-
-        padding-left: 20px;
+        font-size: 30px;
 
     }
 
-    .circle {
+    .ending-card {
 
-        left: -31px;
-
-    }
-
-    .music h2 {
-
-        font-size: 32px;
+        padding: 30px;
 
     }
 
-    .ending h1 {
+    .ending-card h2 {
 
-        font-size: 48px;
+        font-size: 38px;
 
     }
 
-    .ending p {
+    .ending-card p {
 
-        font-size: 17px;
+        font-size: 16px;
+
+    }
+
+    button {
+
+        width: 100%;
 
     }
 
